@@ -1,13 +1,13 @@
 .cvsignore$
 ^.lwpcookies
-^.releaserc
+^.releaserc$
 ^blib/
 ^DBD-WMI-.*
 CVS/
 ^pm_to_blib
 .tar.gz$
 .old$
-^.git/
+^\.git/
 .*.bak$
 .*.ts$
 ^MYMETA.*$
