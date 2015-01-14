@@ -7,6 +7,9 @@ CVS/
 ^pm_to_blib
 .tar.gz$
 .old$
+^.git/
+.*.bak$
+.*.ts$
 ^Makefile$
 ^cvstest$
 ^blibdirs$
