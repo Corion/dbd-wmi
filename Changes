@@ -1,7 +1,14 @@
-v0.07 20100506
+v0.07 20150113
 - Added eg/usb-drive.pl to show how to handle added/removed drive letters
 - Added hint in documentation
 * Need to merge with actual 0.06
+- Added license
+
+v0.06 20090116
+- Fixed Makefile.PL to list File::Accessor prerequisite, no code changes
+
+v0.05 20070819
+- Fixed 99-versions.t, no code changes
 
 v0.04 20061026
 - Fixed bug in ASSOCIATORS OF query (and other queries) where a single '*' column
