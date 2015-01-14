@@ -1,12 +1,23 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         DBD-WMI
-version:      0.02
-version_from: lib/DBD/WMI.pm
-installdirs:  site
+---
+abstract: 'interface to the Windows WMI'
+author:
+  - 'Max Maischein <corion@cpan.org>'
+build_requires:
+  ExtUtils::MakeMaker: '0'
+configure_requires:
+  ExtUtils::MakeMaker: '0'
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 7.02, CPAN::Meta::Converter version 2.142690'
+license: unknown
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: '1.4'
+name: DBD-WMI
+no_index:
+  directory:
+    - t
+    - inc
 requires:
-    DBI:                           0
-    Win32::OLE:                    0
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.25
+  DBI: '0'
+  Win32::OLE: '0'
+version: '0.07'
