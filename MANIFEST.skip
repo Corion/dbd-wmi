@@ -10,6 +10,7 @@ CVS/
 ^.git/
 .*.bak$
 .*.ts$
+^MYMETA.*$
 ^Makefile$
 ^cvstest$
 ^blibdirs$

@@ -15,8 +15,6 @@ MANIFEST			This list of files
 MANIFEST.skip
 META.json
 META.yml
-MYMETA.json
-MYMETA.yml
 t/01-use.t
 t/02-column-parse.t
 t/99-manifest.t
