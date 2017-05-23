@@ -28,7 +28,7 @@ through the DBI.
 
   $sth->execute();
   while (my @row = $sth->fetchrow) {
-    my $proc = $row->[0];
+    my $proc = $row[0];
     print join "\t", $proc->{Caption}, $proc->{ExecutablePath} || "<system>";
     # $proc->Terminate();
     print "\n";
