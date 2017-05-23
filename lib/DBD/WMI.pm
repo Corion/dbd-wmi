@@ -425,7 +425,7 @@ L<https://perlmonks.org/>.
 
 Please report bugs in this module via the RT CPAN bug queue at
 L<https://rt.cpan.org/Public/Dist/Display.html?Name=DBD-WMI>
-or via mail to L<www-mechanize-phantomjs-Bugs@rt.cpan.org>.
+or via mail to L<dbd-wmi-Bugs@rt.cpan.org>.
 
 =head1 AUTHOR
 
