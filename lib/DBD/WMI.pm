@@ -6,7 +6,7 @@ use DBI;
 use vars qw($ATTRIBUTION $VERSION);
 
 $ATTRIBUTION = 'DBD::WMI by Max Maischein <dbd-wmi@corion.net>';
-$VERSION = '0.07';
+$VERSION = '0.08';
 
 =head1 NAME
 
