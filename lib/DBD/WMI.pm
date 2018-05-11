@@ -270,7 +270,10 @@ sub fetchrow_arrayref
     }
     return $sth->_set_fbav(\@row);
 }
+
+{ no warnings 'once';
 *fetch = \&fetchrow_arrayref; # required alias for fetchrow_arrayref
+}
 
 sub STORE
 {
