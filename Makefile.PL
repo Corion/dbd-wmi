@@ -48,6 +48,7 @@ my %module = (
         'warnings'   => 0,
         'Win32::OLE' => 0,
         'DBI'        => 0,
+        'Class::Accessor' => 0,
     },
     TEST_REQUIRES => {
         'Test::More'   => 0,
