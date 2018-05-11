@@ -3,10 +3,8 @@ use strict;
 use base 'DBD::File';
 use DBI;
 
-use vars qw($ATTRIBUTION $VERSION);
-
-$ATTRIBUTION = 'DBD::WMI by Max Maischein <dbd-wmi@corion.net>';
-$VERSION = '0.08';
+our $ATTRIBUTION = 'DBD::WMI by Max Maischein <dbd-wmi@corion.net>';
+our $VERSION = '0.08';
 
 =head1 NAME
 
@@ -80,7 +78,7 @@ package DBD::WMI::dr;
 use strict;
 use Win32::WQL;
 
-use vars qw($imp_data_size);
+our $imp_data_size;
 
 $imp_data_size = 0;
 
