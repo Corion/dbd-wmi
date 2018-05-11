@@ -33,7 +33,7 @@ is a compatibility layer over this module.
 
 =cut
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 Win32::OLE->Option(Warn => 3);
 

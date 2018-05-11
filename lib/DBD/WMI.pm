@@ -4,7 +4,7 @@ use base 'DBD::File';
 use DBI;
 
 our $ATTRIBUTION = 'DBD::WMI by Max Maischein <dbd-wmi@corion.net>';
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 =head1 NAME
 
