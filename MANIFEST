@@ -15,6 +15,8 @@ MANIFEST			This list of files
 MANIFEST.SKIP
 META.json
 META.yml
+README
+README.mkdn
 t/01-use.t
 t/02-column-parse.t
 xt/99-changes.t
