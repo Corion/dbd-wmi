@@ -36,15 +36,19 @@ The WMI
 allows you to query various tables ("namespaces"), like the filesystem,
 currently active processes and events:
 
-     SELECT * FROM Win32_Process
+    SELECT * FROM Win32_Process
 
 The driver/WMI implements two kinds of queries, finite queries like the
 query above and potentially infinite queries for events as they occur in
 the system:
 
+    my $query = q{
+    
      SELECT * FROM __instanceoperationevent
      WITHIN 1
      WHERE TargetInstance ISA 'Win32_DiskDrive'
+     
+    }
 
 This query returns one row (via ->fetchrow_arrayref() ) whenever a disk
 drive gets added to or removed from the system (think of an USB stick).
