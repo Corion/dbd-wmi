@@ -7,7 +7,9 @@ use File::Find;
 use File::Spec;
 
 my @files = qw( MANIFEST MANIFEST.SKIP );
-plan tests => scalar @files * 4 +1;
+plan tests => scalar @files * 4 
+              +1 # MANIFEST existence check
+              ;
 
 for my $file (@files) {
   ok(-f $file, "$file exists");
@@ -17,18 +19,13 @@ for my $file (@files) {
   is_deeply([grep(/^$/, @lines)],[], "No empty lines in $file");
   is_deeply([grep(/^\s+$/, @lines)],[], "No whitespace-only lines in $file");
   is_deeply([grep(/^\s*\S\s+$/, @lines)],[],"No trailing whitespace on lines in $file");
+  
+  if ($file eq 'MANIFEST') {
+    chomp @lines;
+    is_deeply([grep { s/\s.*//; ! -f } @lines], [], "All files in $file exist")
+        or do { diag "$_ is mentioned in $file but doesn't exist on disk" for grep { ! -f } @lines };
+  };
+  
   close F;
 };
 
-# Now, check that all files matching 't/*.t' (recursively) are in the manifest:
-open my $manifest, "<", "MANIFEST"
-    or die "Couldn't read MANIFEST: $!";
-my %manifest = map { chomp; $_ => 1 } <$manifest>;
-my @unknown_tests;
-find(sub{ 
-    push @unknown_tests, $File::Find::name 
-        if /\.t$/i and ! $manifest{ $File::Find::name }
-}, 't');
-if (! is_deeply( \@unknown_tests, [], 'No test files left out of MANIFEST')) {
-    diag "Missing from MANIFEST: $_" for @unknown_tests;
-};

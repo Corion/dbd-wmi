@@ -3,16 +3,16 @@ use File::Spec;
 use File::Find;
 use strict;
 
-# Check that all files do not contain any
+# Check that all files do not contain any 
 # lines with "XXX" - such markers should
 # either have been converted into Todo-stuff
-# or have been resolved.
+# or have been resolved. 
 # The test was provided by Andy Lester.
 
 my @files;
 my $blib = File::Spec->catfile(qw(blib lib));
-find(\&wanted, $blib);
-plan tests => scalar @files;
+find(\&wanted, grep { -d } ($blib, 'bin'));
+plan tests => 2* @files;
 foreach my $file (@files) {
   source_file_ok($file);
 }
@@ -24,7 +24,7 @@ sub wanted {
 sub source_file_ok {
     my $file = shift;
 
-    open( my $fh, "<", $file ) or die "Can't open $file: $!";
+    open( my $fh, "<$file" ) or die "Can't open $file: $!";
     my @lines = <$fh>;
     close $fh;
 
@@ -39,4 +39,9 @@ sub source_file_ok {
     if ( !is( scalar @x, 0, "Looking for XXXes in $file" ) ) {
         diag( $_ ) for @x;
     }
-}
+    @x = grep /<<<|>>>/, @lines;
+
+    if ( !is( scalar @x, 0, "Looking for <<<<|>>>> in $file" ) ) {
+        diag( $_ ) for @x;
+    }
+} 
