@@ -439,7 +439,7 @@ Max Maischein C<corion@cpan.org>
 
 =head1 COPYRIGHT (c)
 
-Copyright 2009-2015 by Max Maischein C<corion@cpan.org>.
+Copyright 2009-2018 by Max Maischein C<corion@cpan.org>.
 
 =head1 LICENSE
 
