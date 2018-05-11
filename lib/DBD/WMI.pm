@@ -92,9 +92,15 @@ sub connect {
         or die "Invalid DSN '$dr_dsn'";
     my $machine = $1 || ".";
 
-    my $wmi = Win32::WQL->new(
-        machine => $machine
-    );
+    my @args;
+    if ( defined $user and $user ne '') {
+        my $locator = Win32::OLE->new("WbemScripting.SWbemLocator");
+        my $ole_con=$locator->ConnectServer($machine,'root/cimV2',$user,$auth);
+        @args = ($ole_con);
+    } else {
+        @args = (machine => $machine);
+    }
+    my $wmi = Win32::WQL->new(@args);
 
     my ($outer, $dbh) = DBI::_new_dbh(
         $drh,
