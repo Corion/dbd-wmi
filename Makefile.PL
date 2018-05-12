@@ -46,6 +46,7 @@ my %module = (
     PREREQ_PM => {
         'strict'     => 0,
         'warnings'   => 0,
+        'base'       => 0,
         'Win32::OLE' => 0,
         'DBI'        => 0,
         'Class::Accessor' => 0,
