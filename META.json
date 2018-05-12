@@ -32,8 +32,10 @@
       },
       "runtime" : {
          "requires" : {
+            "Class::Accessor" : "0",
             "DBI" : "0",
             "Win32::OLE" : "0",
+            "base" : "0",
             "perl" : "5.006",
             "strict" : "0",
             "warnings" : "0"
@@ -53,7 +55,7 @@
          "web" : "https://github.com/Corion/dbd-wmi"
       }
    },
-   "version" : "0.09",
+   "version" : "0.10",
    "x_serialization_backend" : "JSON::PP version 2.94",
    "x_static_install" : 1
 }

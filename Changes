@@ -1,3 +1,6 @@
+v0.10 20180512
++ Fix list of prerequisites, spotted and corrected by by MANWAR
+
 v0.09 20180511
 + Allow supplying a username and password
   Submitted by David Flink (unixrulez@hotmail.com)
