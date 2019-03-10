@@ -1,6 +1,6 @@
 package DBD::WMI;
 use strict;
-use base 'DBD::File';
+use parent 'DBD::File';
 use DBI;
 
 our $ATTRIBUTION = 'DBD::WMI by Max Maischein <dbd-wmi@corion.net>';

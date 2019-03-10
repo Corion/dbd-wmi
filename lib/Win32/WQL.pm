@@ -2,7 +2,7 @@ package Win32::WQL;
 use strict;
 use Win32::OLE; #  qw(EVENTS);
 # Events support will follow later
-use base 'Class::Accessor';
+use parent 'Class::Accessor';
 
 =head1 NAME
 
